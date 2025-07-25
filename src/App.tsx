@@ -3,7 +3,7 @@ import Start from "./Start";
 import JavaScriptLogo from "./JavaScriptLogo";
 import "./App.css"
 import { useQuestionsStore } from "./store/questions";
-import { ClassSharp } from "@mui/icons-material";
+import Game from "./Game";
 
 function App() {
 
@@ -24,7 +24,10 @@ function App() {
             JavaScript Quizz
           </Typography>
         </Stack>
-        <Start />
+
+        {questions.length === 0 && <Start />}
+        {questions.length > 0 && <Game />}
+        
       </Container>
     </main>
   );
